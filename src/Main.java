@@ -45,7 +45,22 @@ public class Main {
                         + " | Defense Rating: " + roster[i].getDefenseRating());
             }
 
-            //commented out - code used for testing
+
+        }
+        System.out.println();
+        System.out.println("-----The Clash of the Guardians------");
+        //guardians clash
+        roster[0].clash(roster[2]);
+        System.out.println();
+
+        roster[1].clash(roster[3]);
+
+
+    }
+}
+
+
+//commented out - code used for testing
             /*System.out.println("Guardian 1: " + guardian1.getName() + " | Defense Rating: " + guardian1.getDefenseRating());
             System.out.println("Guardian 2: " + guardian2.getName() + " | Defense Rating: " + guardian2.getDefenseRating());
             System.out.println("Guardian 3: " + guardian3.getName() + " | Defense Rating: " + guardian3.getDefenseRating());
@@ -59,10 +74,3 @@ public class Main {
             //test new changes and methods
             guardian4.setDefenseRating(-25);
             System.out.println("Current Defense Rating: " + guardian4.getDefenseRating());*/
-
-
-        }
-
-
-    }
-}

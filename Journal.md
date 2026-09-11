@@ -21,3 +21,11 @@ If you had stored isLegendary as a separate boolean field instead of calculating
 If isLegendary were stored as a separate boolean field, you would have to manually recalculate and reassign it whenever defenseRating changes.
 
 Storing derived data like this leads to data desynchronization bugs. Whenever you add or update code that touches the rating, you have to hunt down every spot in your class and manually keep the data in sync—which is really easy to forget as your codebase grows.
+
+
+-----------
+Java allows a method in the Guardian class to directly access opponent.defenseRating even though the field is private. Why do you think this happens, and what are the pros and cons of using opponent.getDefenseRating() anyway?
+
+Java allows opponent.defenseRating because that line of code is written inside the Guardian class. private visibility is restricted at the class level, not the individual object level, so any Guardian instance can directly access the private fields of another Guardian.
+
+Pros and cons of using opponent.getDefenseRating() is if you change how defense is calculated inside getDefenseRating() later, the clash() method will automatically use that updated value without needing any code changes. However, it does require for you to type extra code.
